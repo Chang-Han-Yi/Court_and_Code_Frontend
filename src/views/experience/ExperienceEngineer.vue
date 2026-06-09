@@ -9,7 +9,7 @@
         </p>
       </div>
       <div class="border-start border-primary border-3 ps-3">
-        <h5 class="fw-bold mb-1">張翰浥的個人專區（本專案）</h5>
+        <h5 class="fw-bold mb-1">Court_and_Code（本專案）</h5>
         <p class="text-muted small mb-2">個人專案</p>
         <p class="text-dark mb-0">
           Vue 3 + TypeScript 前台、Express + Prisma 後台 API、Supabase PostgreSQL，實作文章 CMS

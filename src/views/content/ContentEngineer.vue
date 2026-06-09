@@ -11,7 +11,7 @@
             <i class="bi bi-code-slash display-4 opacity-50"></i>
           </div>
           <div class="card-body p-4">
-            <h5 class="card-title fw-bold">張翰浥的個人專區</h5>
+            <h5 class="card-title fw-bold">Court_and_Code</h5>
             <p class="card-text text-muted">
               Vue 3 + Vite 前台，Express + Prisma 後台，Supabase 資料庫，具文章 CMS 與圖片上傳。
             </p>

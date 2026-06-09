@@ -13,7 +13,7 @@ const currentPath = computed(() => route.path)
   >
     <div class="container">
       <RouterLink class="navbar-brand fw-bold text-dark tracking-widest" to="/">
-        張翰浥的個人專區
+        Court_and_Code
       </RouterLink>
       <button
         class="navbar-toggler border-0"

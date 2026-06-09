@@ -20,7 +20,7 @@
           <h4 class="fw-bold text-primary mb-3">工程經歷摘要</h4>
           <ul class="list-unstyled mb-4 text-muted">
             <li class="mb-2">· 前端工程師 — 網站架構與開發</li>
-            <li class="mb-2">· 個人專區 — 全端串接與 CMS</li>
+            <li class="mb-2">· Court_and_Code — 全端串接與 CMS</li>
           </ul>
           <RouterLink to="/experience/engineer" class="btn btn-sm btn-primary rounded-pill">
             完整工程經歷

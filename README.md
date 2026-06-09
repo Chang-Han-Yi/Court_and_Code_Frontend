@@ -1,8 +1,8 @@
-# Court_and_Code · 前端（my-volleyball-vue）
+# Court_and_Code · 前端
 
-張翰浥個人專區 **Court_and_Code** 的 **前端專案**，負責前台展示與文章管理後台（CMS）介面。
+**Court_and_Code** 的 **前端專案**，負責前台展示與文章管理後台（CMS）介面。
 
-> 本 repo 為全端工作區中的 **前端一半**。後端 API 位於同層的 [`my-volleyball-api`](../my-volleyball-api/)。  
+> 本 repo 為全端工作區中的 **前端一半**。後端 API 位於同層的 [`Court_and_Code_Backend`](../Court_and_Code_Backend/)。  
 > 整體說明、同時啟動方式與 API 功能對照表見 [根目錄 README](../README.md)。
 
 ## 與後端的關係
@@ -102,4 +102,4 @@ src/
 ## 相關文件
 
 - [根目錄 README（雙專案總覽）](../README.md)
-- [後端 README](../my-volleyball-api/README.md)
+- [後端 README](../Court_and_Code_Backend/README.md)

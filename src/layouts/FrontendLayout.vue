@@ -91,7 +91,7 @@ const breadcrumbs = computed(() => {
 
       <footer class="bg-white text-secondary text-center py-4 mt-auto border-top">
         <div class="container">
-          <p class="mb-0 small">&copy; {{ new Date().getFullYear() }} 張翰浥的個人專區. All rights reserved.</p>
+          <p class="mb-0 small">&copy; {{ new Date().getFullYear() }} Court_and_Code. All rights reserved.</p>
         </div>
       </footer>
     </div>

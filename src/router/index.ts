@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { SectionKey } from '@/constants/navigation'
 
-export const SITE_TITLE = '張翰浥的個人專區'
+export const SITE_TITLE = 'Court_and_Code'
 
 function sectionMeta(
   section: SectionKey,
