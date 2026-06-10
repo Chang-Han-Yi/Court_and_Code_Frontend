@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 import { createArticle, getApiErrorMessage, uploadImage } from '@/lib/api'
 
@@ -57,8 +57,8 @@ async function submitPost() {
   }
 }
 
-async function onSelectImage(event: Event) {
-  const input = event.target as HTMLInputElement
+async function onSelectImage(event) {
+  const input = event.target
   const selected = input.files?.[0]
   if (!selected) return
 

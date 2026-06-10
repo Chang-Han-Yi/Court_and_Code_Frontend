@@ -1,11 +1,11 @@
-<script setup lang="ts">
+<script setup>
 import { computed } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { SECTIONS, type SectionKey, isTabActive } from '@/constants/navigation'
+import { SECTIONS, isTabActive } from '@/constants/navigation'
 
-const props = defineProps<{
-  section: SectionKey
-}>()
+const props = defineProps({
+  section: { type: String, required: true },
+})
 
 const route = useRoute()
 const config = computed(() => SECTIONS[props.section])

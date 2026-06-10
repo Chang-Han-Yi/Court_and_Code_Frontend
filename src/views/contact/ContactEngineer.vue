@@ -12,6 +12,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import ContactLinks from '@/components/contact/ContactLinks.vue'
 </script>

@@ -18,12 +18,12 @@
 
 - [Vue 3](https://vuejs.org/)（Composition API）
 - [Vite](https://vitejs.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vue Router 4](https://router.vuejs.org/)
+- JavaScript
+- [Vue Router](https://router.vuejs.org/)
 - [Pinia](https://pinia.vuejs.org/)
 - [Bootstrap 5](https://getbootstrap.com/)
 - [GSAP](https://gsap.com/)（首頁與部分內容頁動畫）
-- [Axios](https://axios-http.com/)（API 請求，封裝於 `src/lib/api.ts`）
+- [Axios](https://axios-http.com/)（API 請求，封裝於 `src/lib/api.js`）
 
 ## 環境建置
 
@@ -57,7 +57,7 @@ npm run build
 
 ## 串接 API 的功能
 
-以下頁面透過 `src/lib/api.ts` 呼叫後端，**需後端與資料庫正常運作**：
+以下頁面透過 `src/lib/api.js` 呼叫後端，**需後端與資料庫正常運作**：
 
 | 頁面 | 路由 | API 函式 | 後端端點 |
 |------|------|----------|----------|
@@ -82,8 +82,8 @@ npm run build
 
 ```
 src/
-├── lib/api.ts          # 後端 API 封裝
-├── router/index.ts     # 路由（前台 + /admin 後台）
+├── lib/api.js          # 後端 API 封裝
+├── router/index.js     # 路由（前台 + /admin 後台）
 ├── layouts/
 │   ├── FrontendLayout.vue
 │   ├── SectionLayout.vue
@@ -95,7 +95,7 @@ src/
 
 ## 開發規範
 
-- 在 `src/main.ts` 統一載入 Bootstrap CSS 與 JS。
+- 在 `src/main.js` 統一載入 Bootstrap CSS 與 JS。
 - 排版優先使用 Bootstrap Utility Classes，表單與表格採 Bootstrap 元件結構。
 - 後台路由收斂於 `/admin` 父路由，版面由 `AdminLayout.vue` 提供。
 

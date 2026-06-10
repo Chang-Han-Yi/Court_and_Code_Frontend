@@ -34,7 +34,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 // 網誌文章清單
 </script>
 

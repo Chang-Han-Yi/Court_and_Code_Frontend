@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getApiErrorMessage, getArticle, updateArticle, uploadImage } from '@/lib/api'
@@ -82,8 +82,8 @@ function backToDashboard() {
   router.push('/admin/dashboard')
 }
 
-async function onSelectImage(event: Event) {
-  const input = event.target as HTMLInputElement
+async function onSelectImage(event) {
+  const input = event.target
   const selected = input.files?.[0]
   if (!selected) return
 

@@ -12,7 +12,7 @@
         <h5 class="fw-bold mb-1">Court_and_Code（本專案）</h5>
         <p class="text-muted small mb-2">個人專案</p>
         <p class="text-dark mb-0">
-          Vue 3 + TypeScript 前台、Express + Prisma 後台 API、Supabase PostgreSQL，實作文章 CMS
+          Vue 3 + JavaScript 前台、Express + Prisma 後台 API、Supabase PostgreSQL，實作文章 CMS
           與雙身分內容架構。
         </p>
       </div>

@@ -1,12 +1,4 @@
-export type NavMatch = 'exact' | 'prefix'
-
-export type MainNavItem = {
-  label: string
-  to: string
-  match?: NavMatch
-}
-
-export const MAIN_NAV: MainNavItem[] = [
+export const MAIN_NAV = [
   { label: '首頁', to: '/', match: 'exact' },
   { label: '關於', to: '/about', match: 'prefix' },
   { label: '經歷', to: '/experience', match: 'prefix' },
@@ -14,22 +6,7 @@ export const MAIN_NAV: MainNavItem[] = [
   { label: '聯絡', to: '/contact', match: 'prefix' },
 ]
 
-export type SectionKey = 'about' | 'experience' | 'content' | 'contact'
-
-export type SectionTab = {
-  label: string
-  to: string
-  match: NavMatch
-}
-
-export type SectionConfig = {
-  key: SectionKey
-  title: string
-  base: string
-  tabs: SectionTab[]
-}
-
-export const SECTIONS: Record<SectionKey, SectionConfig> = {
+export const SECTIONS = {
   about: {
     key: 'about',
     title: '關於',
@@ -72,7 +49,7 @@ export const SECTIONS: Record<SectionKey, SectionConfig> = {
   },
 }
 
-export function isNavActive(item: MainNavItem, path: string): boolean {
+export function isNavActive(item, path) {
   if (item.match === 'prefix') {
     if (item.to === '/') return path === '/'
     return path === item.to || path.startsWith(`${item.to}/`)
@@ -80,7 +57,7 @@ export function isNavActive(item: MainNavItem, path: string): boolean {
   return path === item.to
 }
 
-export function isTabActive(tab: SectionTab, path: string): boolean {
+export function isTabActive(tab, path) {
   if (tab.match === 'prefix') {
     return path === tab.to || path.startsWith(`${tab.to}/`)
   }

@@ -31,6 +31,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 // 關於我
 </script>

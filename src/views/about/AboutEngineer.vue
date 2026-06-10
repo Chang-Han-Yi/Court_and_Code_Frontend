@@ -6,7 +6,7 @@
           <h4 class="fw-bold mb-4">專業技能</h4>
           <div class="mb-4">
             <span class="badge bg-primary fs-6 me-2 mb-2">Vue.js</span>
-            <span class="badge bg-primary fs-6 me-2 mb-2">TypeScript</span>
+            <span class="badge bg-primary fs-6 me-2 mb-2">JavaScript</span>
             <span class="badge bg-primary fs-6 me-2 mb-2">HTML / CSS</span>
             <span class="badge bg-primary fs-6 me-2 mb-2">Bootstrap</span>
           </div>

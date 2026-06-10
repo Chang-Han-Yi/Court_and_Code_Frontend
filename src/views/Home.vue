@@ -239,15 +239,15 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const mainBall = ref<HTMLElement | null>(null)
-let tl: gsap.core.Timeline | null = null
+const mainBall = ref(null)
+let tl = null
 
 onMounted(() => {
   // 1. Hero 入場動畫

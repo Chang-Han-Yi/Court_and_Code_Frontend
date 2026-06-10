@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup>
 import { computed, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { deleteArticle, listArticles, updateArticle, type ArticleItem } from '@/lib/api'
+import { deleteArticle, listArticles, updateArticle } from '@/lib/api'
 
-const articles = ref<ArticleItem[]>([])
+const articles = ref([])
 const isLoading = ref(false)
 const errorMessage = ref('')
 const actionMessage = ref('')
@@ -23,7 +23,7 @@ async function fetchArticles() {
   }
 }
 
-async function removeArticle(id: string) {
+async function removeArticle(id) {
   const ok = window.confirm(`確定要刪除文章 ${id} 嗎？`)
   if (!ok) return
 
@@ -38,7 +38,7 @@ async function removeArticle(id: string) {
   }
 }
 
-async function togglePublished(row: ArticleItem) {
+async function togglePublished(row) {
   actionMessage.value = ''
   errorMessage.value = ''
   try {
@@ -51,7 +51,7 @@ async function togglePublished(row: ArticleItem) {
   }
 }
 
-function formatDate(iso?: string) {
+function formatDate(iso) {
   if (!iso) return '-'
   return new Date(iso).toLocaleString('zh-TW')
 }

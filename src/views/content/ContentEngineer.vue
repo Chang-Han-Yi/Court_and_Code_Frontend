@@ -17,7 +17,7 @@
             </p>
             <div class="mt-3">
               <span class="badge bg-light text-dark border me-1">Vue 3</span>
-              <span class="badge bg-light text-dark border me-1">TypeScript</span>
+              <span class="badge bg-light text-dark border me-1">JavaScript</span>
               <span class="badge bg-light text-dark border me-1">Bootstrap 5</span>
             </div>
           </div>
@@ -42,7 +42,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const engineerPosts = [
   {
     id: 1,

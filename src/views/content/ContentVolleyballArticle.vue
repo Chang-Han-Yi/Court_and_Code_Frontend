@@ -1,10 +1,10 @@
-<script setup lang="ts">
+<script setup>
 import { onMounted, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { getArticle } from '@/lib/api'
 
 const route = useRoute()
-const article = ref<Awaited<ReturnType<typeof getArticle>> | null>(null)
+const article = ref(null)
 const isLoading = ref(false)
 const loadError = ref('')
 

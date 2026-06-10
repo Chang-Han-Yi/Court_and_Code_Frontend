@@ -1,14 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import type { SectionKey } from '@/constants/navigation'
 
 export const SITE_TITLE = 'Court_and_Code'
 
-function sectionMeta(
-  section: SectionKey,
-  layerTitle: string,
-  extra: Record<string, unknown> = {},
-) {
-  const titles: Record<SectionKey, string> = {
+function sectionMeta(section, layerTitle, extra = {}) {
+  const titles = {
     about: '關於',
     experience: '經歷',
     content: '內容',
@@ -18,8 +13,8 @@ function sectionMeta(
     section,
     title: titles[section],
     layerTitle,
-    subtitle: extra.subtitle as string | undefined,
-    icon: extra.icon as string | undefined,
+    subtitle: extra.subtitle,
+    icon: extra.icon,
   }
 }
 

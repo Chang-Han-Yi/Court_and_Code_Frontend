@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { RouterLink, useRoute } from 'vue-router'
 import { computed } from 'vue'
 import SiteNavbar from '@/components/layout/SiteNavbar.vue'
@@ -8,18 +8,18 @@ const isHome = computed(() => route.path === '/')
 const showBreadcrumb = computed(() => route.path !== '/')
 
 const breadcrumbs = computed(() => {
-  const items: { title: string; to: string }[] = []
-  const section = route.meta.section as string | undefined
-  const layerTitle = route.meta.layerTitle as string | undefined
+  const items = []
+  const section = route.meta.section
+  const layerTitle = route.meta.layerTitle
 
   if (section) {
-    const sectionPaths: Record<string, string> = {
+    const sectionPaths = {
       about: '/about',
       experience: '/experience',
       content: '/content',
       contact: '/contact',
     }
-    const sectionTitles: Record<string, string> = {
+    const sectionTitles = {
       about: '關於',
       experience: '經歷',
       content: '內容',

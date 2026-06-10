@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup>
 import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
-import { listArticles, type ArticleItem } from '@/lib/api'
+import { listArticles } from '@/lib/api'
 
-const articles = ref<ArticleItem[]>([])
+const articles = ref([])
 const isLoading = ref(false)
 const loadError = ref('')
 
