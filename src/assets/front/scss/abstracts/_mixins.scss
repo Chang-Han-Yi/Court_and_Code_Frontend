@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+@mixin focus-ring {
+  outline: 2px solid $primary;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@mixin nav-link-base {
+  color: $text-muted;
+  text-decoration: none;
+  transition: color $transition-fast;
+}

@@ -38,9 +38,4 @@
 // 網誌文章清單
 </script>
 
-<style scoped>
-.blog-image-placeholder {
-  width: 250px;
-  min-height: 180px;
-}
-</style>
+<style src="@/assets/front/css/blog.css"></style>

@@ -22,6 +22,7 @@
 - [Vue Router](https://router.vuejs.org/)
 - [Pinia](https://pinia.vuejs.org/)
 - [Bootstrap 5](https://getbootstrap.com/)
+- SCSS → CSS（由編輯器 **Live Sass Compiler** 監聽編譯，輸出至 `front/css/`、`admin/css/`）
 - [GSAP](https://gsap.com/)（首頁與部分內容頁動畫）
 - [Axios](https://axios-http.com/)（API 請求，封裝於 `src/lib/api.js`）
 
@@ -84,20 +85,45 @@ npm run build
 src/
 ├── lib/api.js          # 後端 API 封裝
 ├── router/index.js     # 路由（前台 + /admin 後台）
+├── assets/
+│   ├── front/
+│   │   ├── scss/       # 前台 SCSS（abstracts、base、partials、main.scss 等）
+│   │   ├── css/        # 編譯產物（自動產生）
+│   │   ├── images/     # 前台圖片
+│   │   └── js/         # 前台靜態 JS
+│   └── admin/
+│       ├── scss/       # 後台 SCSS
+│       ├── css/        # 編譯產物（自動產生）
+│       ├── images/
+│       └── js/
 ├── layouts/
-│   ├── FrontendLayout.vue
-│   ├── SectionLayout.vue
-│   └── AdminLayout.vue
+│   ├── front/
+│   │   ├── Index.vue
+│   │   └── InnerPage.vue
+│   └── admin/
+│       └── Admin.vue
 └── views/
     ├── content/        # 含 API 串接的文章頁
     └── Dashboard.vue   # 後台文章管理
 ```
 
+## 樣式規範
+
+- SCSS 分別寫在 `src/assets/front/scss/` 與 `src/assets/admin/scss/`。開發時在 Cursor 執行 **Live SASS: Watch Sass**（狀態列顯示 Watch Sass），存檔後自動輸出至對應的 `css/`。設定見 `.vscode/settings.json`。
+- 正式建置前請先確認 CSS 已編譯（Watch Sass 開啟中，或執行 **Live SASS: Compile Sass - Without Watch Mode**），再跑 `npm run build`。
+- 全域樣式由 `main.js` 引入 `front/css/main.css`。
+- 佈局與樣式對應：
+  - `Index.vue` → `front/css/index.css`
+  - `InnerPage.vue` → `front/css/inner-page.css`
+  - `Admin.vue` → `admin/css/admin.css`
+- 頁面樣式由對應 `.vue` 自行引入（如 `Home.vue` → `front/css/home.css`）。
+- 色彩、間距等共用值定義於 `front/scss/abstracts/_variables.scss`（後台以相對路徑引用）。
+
 ## 開發規範
 
 - 在 `src/main.js` 統一載入 Bootstrap CSS 與 JS。
 - 排版優先使用 Bootstrap Utility Classes，表單與表格採 Bootstrap 元件結構。
-- 後台路由收斂於 `/admin` 父路由，版面由 `AdminLayout.vue` 提供。
+- 後台路由收斂於 `/admin` 父路由，版面由 `Admin.vue` 提供。
 
 ## 相關文件
 

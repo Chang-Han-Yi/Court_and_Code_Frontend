@@ -23,7 +23,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('../layouts/FrontendLayout.vue'),
+      component: () => import('../layouts/front/Index.vue'),
       children: [
         {
           path: '',
@@ -33,7 +33,7 @@ const router = createRouter({
         },
         {
           path: 'about',
-          component: () => import('../layouts/SectionLayout.vue'),
+          component: () => import('../layouts/front/InnerPage.vue'),
           meta: { title: '關於', section: 'about' },
           redirect: '/about',
           children: [
@@ -68,7 +68,7 @@ const router = createRouter({
         },
         {
           path: 'experience',
-          component: () => import('../layouts/SectionLayout.vue'),
+          component: () => import('../layouts/front/InnerPage.vue'),
           meta: { title: '經歷', section: 'experience' },
           redirect: '/experience',
           children: [
@@ -103,7 +103,7 @@ const router = createRouter({
         },
         {
           path: 'content',
-          component: () => import('../layouts/SectionLayout.vue'),
+          component: () => import('../layouts/front/InnerPage.vue'),
           meta: { title: '內容', section: 'content' },
           redirect: '/content',
           children: [
@@ -147,7 +147,7 @@ const router = createRouter({
         },
         {
           path: 'contact',
-          component: () => import('../layouts/SectionLayout.vue'),
+          component: () => import('../layouts/front/InnerPage.vue'),
           meta: { title: '聯絡', section: 'contact' },
           redirect: '/contact',
           children: [
@@ -190,8 +190,8 @@ const router = createRouter({
     },
     {
       path: '/admin',
-      name: 'AdminLayout',
-      component: () => import('../layouts/AdminLayout.vue'),
+      name: 'Admin',
+      component: () => import('../layouts/admin/Admin.vue'),
       redirect: '/admin/dashboard',
       meta: { title: '管理後台' },
       children: [

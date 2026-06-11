@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "Vue.volar",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "glenn2223.live-sass"
   ]
 }

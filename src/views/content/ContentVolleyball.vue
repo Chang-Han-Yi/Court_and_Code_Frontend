@@ -103,11 +103,4 @@ onMounted(async () => {
   </div>
 </template>
 
-<style scoped>
-.article-list-item {
-  transition: background-color 0.3s ease;
-}
-.article-list-item:hover {
-  background: rgba(13, 110, 253, 0.05);
-}
-</style>
+<style src="@/assets/front/css/article.css"></style>

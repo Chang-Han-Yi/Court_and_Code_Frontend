@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as *;
+
+.section-layout {
+  // 區塊內頁共用容器
+}
+
+.section-subnav-link {
+  color: $text-muted;
+  text-decoration: none;
+  transition:
+    background-color $transition-fast,
+    color $transition-fast;
+
+  &:hover {
+    color: $text-dark;
+    background-color: $bg-subnav-hover;
+  }
+
+  &.is-active {
+    color: $white;
+    background-color: $primary;
+  }
+}

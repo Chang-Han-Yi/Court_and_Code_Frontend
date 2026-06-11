@@ -1,0 +1,6 @@
+@use 'partials/home';
+
+// 相對編譯輸出路徑 front/css/home.css
+.hero-section {
+  background-image: url('../images/hero-bg.png');
+}

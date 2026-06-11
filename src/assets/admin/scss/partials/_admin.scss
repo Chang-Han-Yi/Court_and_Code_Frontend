@@ -1,0 +1,10 @@
+@use '../../../front/scss/abstracts/variables' as *;
+
+.admin-sidebar {
+  width: $admin-sidebar-width;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+}

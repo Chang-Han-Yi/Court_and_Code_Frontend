@@ -93,12 +93,4 @@ const breadcrumbs = computed(() =>
   </div>
 </template>
 
-<style scoped>
-.admin-sidebar {
-  width: 250px;
-}
-.user-avatar {
-  width: 32px;
-  height: 32px;
-}
-</style>
+<style src="@/assets/admin/css/admin.css"></style>

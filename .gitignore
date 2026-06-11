@@ -37,3 +37,9 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# SCSS 編譯產物（由 npm run scss:build 產生）
+src/assets/front/css/**/*.css
+!src/assets/front/css/.gitkeep
+src/assets/admin/css/**/*.css
+!src/assets/admin/css/.gitkeep

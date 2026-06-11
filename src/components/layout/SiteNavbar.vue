@@ -43,36 +43,3 @@ const currentPath = computed(() => route.path)
     </div>
   </nav>
 </template>
-
-<style scoped>
-.backdrop-blur {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.site-nav-link {
-  color: #6c757d;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.site-nav-link:hover {
-  color: #212529;
-}
-
-.site-nav-link.is-active {
-  color: #212529;
-  font-weight: 700;
-  border-bottom-color: #0d6efd;
-}
-
-.site-nav-link:focus-visible {
-  outline: 2px solid #0d6efd;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-</style>

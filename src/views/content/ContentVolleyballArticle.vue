@@ -66,12 +66,4 @@ watch(() => route.params.id, fetchArticle)
   </div>
 </template>
 
-<style scoped>
-.article-wrapper {
-  max-width: 860px;
-}
-.article-image {
-  max-height: 440px;
-  object-fit: cover;
-}
-</style>
+<style src="@/assets/front/css/article.css"></style>

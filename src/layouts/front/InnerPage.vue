@@ -27,3 +27,5 @@ const pageIcon = computed(() => route.meta.icon)
     </div>
   </div>
 </template>
+
+<style src="@/assets/front/css/inner-page.css"></style>

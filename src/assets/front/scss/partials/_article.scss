@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *;
+
+.article-list-item {
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: rgba($primary, 0.05);
+  }
+}
+
+.article-wrapper {
+  max-width: $article-max-width;
+}
+
+.article-image {
+  max-height: 440px;
+  object-fit: cover;
+}
