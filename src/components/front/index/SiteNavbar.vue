@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { MAIN_NAV, isNavActive } from '@/constants/navigation'
+import { MAIN_NAV, isNavActive } from '@/assets/front/js/navigation'
 
 const route = useRoute()
 const currentPath = computed(() => route.path)

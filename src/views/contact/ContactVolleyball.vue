@@ -13,5 +13,5 @@
 </template>
 
 <script setup>
-import ContactLinks from '@/components/contact/ContactLinks.vue'
+import ContactLinks from '@/components/front/inner-pages/ContactLinks.vue'
 </script>

@@ -1,9 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterView, useRoute } from 'vue-router'
-import SectionSubNav from '@/components/layout/SectionSubNav.vue'
-import SectionPageHeader from '@/components/layout/SectionPageHeader.vue'
-import { SECTIONS } from '@/constants/navigation'
+import SectionSubNav from '@/components/front/inner-pages/SectionSubNav.vue'
+import SectionPageHeader from '@/components/front/inner-pages/SectionPageHeader.vue'
+import { SECTIONS } from '@/assets/front/js/navigation'
 
 const route = useRoute()
 

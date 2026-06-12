@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, useRoute } from 'vue-router'
 import { computed } from 'vue'
-import SiteNavbar from '@/components/layout/SiteNavbar.vue'
+import SiteNavbar from '@/components/front/index/SiteNavbar.vue'
 
 const route = useRoute()
 const isHome = computed(() => route.path === '/')

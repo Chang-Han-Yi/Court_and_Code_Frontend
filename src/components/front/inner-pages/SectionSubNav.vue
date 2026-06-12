@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { SECTIONS, isTabActive } from '@/constants/navigation'
+import { SECTIONS, isTabActive } from '@/assets/front/js/navigation'
 
 const props = defineProps({
   section: { type: String, required: true },
