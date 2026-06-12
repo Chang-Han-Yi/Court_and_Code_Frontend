@@ -7,10 +7,10 @@
 
 ## 與後端的關係
 
-| 情境 | 結果 |
-|------|------|
-| 只啟動本專案 | 首頁、關於、經歷、聯絡等靜態頁可瀏覽；**文章與後台功能無法取得資料** |
-| 同時啟動前端 + 後端 | 文章列表、詳情、後台 CRUD、圖片上傳可完整運作 |
+| 情境                | 結果                                                                 |
+| ------------------- | -------------------------------------------------------------------- |
+| 只啟動本專案        | 首頁、關於、經歷、聯絡等靜態頁可瀏覽；**文章與後台功能無法取得資料** |
+| 同時啟動前端 + 後端 | 文章列表、詳情、後台 CRUD、圖片上傳可完整運作                        |
 
 開發時請先啟動後端（`http://localhost:3000`），再啟動本專案。
 
@@ -60,18 +60,18 @@ npm run build
 
 以下頁面透過 `src/lib/api.js` 呼叫後端，**需後端與資料庫正常運作**：
 
-| 頁面 | 路由 | API 函式 | 後端端點 |
-|------|------|----------|----------|
-| 內容總覽 | `/content` | `listArticles()` | `GET /articles` |
-| 排球文章列表 | `/content/volleyball` | `listArticles()` | `GET /articles` |
-| 排球文章詳情 | `/content/volleyball/:id` | `getArticle(id)` | `GET /articles/:id` |
-| 文章管理 | `/admin/dashboard` | `listArticles({ includeDraft: true })` | `GET /articles?includeDraft=1` |
-| 文章管理 | `/admin/dashboard` | `updateArticle()` | `PUT /articles/:id` |
-| 文章管理 | `/admin/dashboard` | `deleteArticle()` | `DELETE /articles/:id` |
-| 新增文章 | `/admin/create-post` | `createArticle()` | `POST /articles` |
-| 新增文章 | `/admin/create-post` | `uploadImage()` | `POST /uploads` |
-| 編輯文章 | `/admin/edit-post/:id` | `getArticle()`、`updateArticle()` | `GET`、`PUT /articles/:id` |
-| 編輯文章 | `/admin/edit-post/:id` | `uploadImage()` | `POST /uploads` |
+| 頁面         | 路由                      | API 函式                               | 後端端點                       |
+| ------------ | ------------------------- | -------------------------------------- | ------------------------------ |
+| 內容總覽     | `/content`                | `listArticles()`                       | `GET /articles`                |
+| 排球文章列表 | `/content/volleyball`     | `listArticles()`                       | `GET /articles`                |
+| 排球文章詳情 | `/content/volleyball/:id` | `getArticle(id)`                       | `GET /articles/:id`            |
+| 文章管理     | `/admin/dashboard`        | `listArticles({ includeDraft: true })` | `GET /articles?includeDraft=1` |
+| 文章管理     | `/admin/dashboard`        | `updateArticle()`                      | `PUT /articles/:id`            |
+| 文章管理     | `/admin/dashboard`        | `deleteArticle()`                      | `DELETE /articles/:id`         |
+| 新增文章     | `/admin/create-post`      | `createArticle()`                      | `POST /articles`               |
+| 新增文章     | `/admin/create-post`      | `uploadImage()`                        | `POST /uploads`                |
+| 編輯文章     | `/admin/edit-post/:id`    | `getArticle()`、`updateArticle()`      | `GET`、`PUT /articles/:id`     |
+| 編輯文章     | `/admin/edit-post/:id`    | `uploadImage()`                        | `POST /uploads`                |
 
 ### 不依賴 API 的頁面
 
@@ -128,4 +128,5 @@ src/
 ## 相關文件
 
 - [根目錄 README（雙專案總覽）](../README.md)
+
 - [後端 README](../Court_and_Code_Backend/README.md)
