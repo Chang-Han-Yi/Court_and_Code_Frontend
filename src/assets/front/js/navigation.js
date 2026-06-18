@@ -3,7 +3,7 @@ export const MAIN_NAV = [
   { label: '關於', to: '/about', match: 'prefix' },
   { label: '經歷', to: '/experience', match: 'prefix' },
   { label: '內容', to: '/content', match: 'prefix' },
-  { label: '聯絡', to: '/contact', match: 'prefix' },
+  { label: '聯絡', to: '/contact', match: 'exact' },
 ]
 
 export const SECTIONS = {
@@ -34,17 +34,7 @@ export const SECTIONS = {
     tabs: [
       { label: '總覽', to: '/content', match: 'exact' },
       { label: '排球', to: '/content/volleyball', match: 'prefix' },
-      { label: '工程', to: '/content/engineer', match: 'exact' },
-    ],
-  },
-  contact: {
-    key: 'contact',
-    title: '聯絡',
-    base: '/contact',
-    tabs: [
-      { label: '總覽', to: '/contact', match: 'exact' },
-      { label: '排球', to: '/contact/volleyball', match: 'exact' },
-      { label: '工程', to: '/contact/engineer', match: 'exact' },
+      { label: '工程', to: '/content/engineer', match: 'prefix' },
     ],
   },
 }

@@ -7,10 +7,11 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 })
 
-export async function listArticles(options) {
-  const { data } = await api.get('/articles', {
-    params: options?.includeDraft ? { includeDraft: '1' } : {},
-  })
+export async function listArticles(options = {}) {
+  const params = {}
+  if (options.includeDraft) params.includeDraft = '1'
+  if (options.category) params.category = options.category
+  const { data } = await api.get('/articles', { params })
   return data.data
 }
 
@@ -42,6 +43,40 @@ export async function uploadImage(file) {
     headers: { 'Content-Type': 'multipart/form-data' },
   })
   return data.url
+}
+
+/** @param {'overview' | 'volleyball' | 'engineer'} page */
+export async function getAboutPage(page) {
+  const { data } = await api.get(`/about/${encodeURIComponent(page)}`)
+  return data
+}
+
+/** @param {'overview' | 'volleyball' | 'engineer'} page */
+export async function updateAboutPage(page, payload) {
+  const { data } = await api.put(`/about/${encodeURIComponent(page)}`, payload)
+  return data
+}
+
+export async function getContact() {
+  const { data } = await api.get('/contact')
+  return data
+}
+
+export async function updateContact(payload) {
+  const { data } = await api.put('/contact', payload)
+  return data
+}
+
+/** @param {'overview' | 'volleyball' | 'engineer'} page */
+export async function getExperiencePage(page) {
+  const { data } = await api.get(`/experience/${encodeURIComponent(page)}`)
+  return data
+}
+
+/** @param {'overview' | 'volleyball' | 'engineer'} page */
+export async function updateExperiencePage(page, payload) {
+  const { data } = await api.put(`/experience/${encodeURIComponent(page)}`, payload)
+  return data
 }
 
 /** 從後端 JSON 錯誤取出訊息，供表單顯示用 */

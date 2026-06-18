@@ -1,36 +1,32 @@
 <script setup>
 defineProps({
+  links: {
+    type: Array,
+    default: () => [],
+  },
   intro: String,
 })
 </script>
 
 <template>
   <ul class="list-unstyled mb-0">
-    <li class="mb-4 d-flex align-items-center">
-      <i class="bi bi-envelope fs-3 text-secondary me-3"></i>
+    <li
+      v-for="(link, index) in links"
+      :key="link.label"
+      class="d-flex align-items-center"
+      :class="{ 'mb-4': index < links.length - 1 }"
+    >
+      <i :class="`${link.icon} fs-3 text-secondary me-3`"></i>
       <div>
-        <h6 class="fw-bold mb-1">Email</h6>
-        <a href="mailto:example@gmail.com" class="text-muted text-decoration-none"
-          >example@gmail.com</a
+        <h6 class="fw-bold mb-1">{{ link.label }}</h6>
+        <a
+          :href="link.href"
+          class="text-muted text-decoration-none"
+          :target="link.href.startsWith('mailto:') ? undefined : '_blank'"
+          :rel="link.href.startsWith('mailto:') ? undefined : 'noopener'"
         >
-      </div>
-    </li>
-    <li class="mb-4 d-flex align-items-center">
-      <i class="bi bi-github fs-3 text-secondary me-3"></i>
-      <div>
-        <h6 class="fw-bold mb-1">GitHub</h6>
-        <a href="#" class="text-muted text-decoration-none" target="_blank" rel="noopener"
-          >github.com/your-username</a
-        >
-      </div>
-    </li>
-    <li class="d-flex align-items-center">
-      <i class="bi bi-linkedin fs-3 text-secondary me-3"></i>
-      <div>
-        <h6 class="fw-bold mb-1">LinkedIn</h6>
-        <a href="#" class="text-muted text-decoration-none" target="_blank" rel="noopener"
-          >linkedin.com/in/your-profile</a
-        >
+          {{ link.text }}
+        </a>
       </div>
     </li>
   </ul>

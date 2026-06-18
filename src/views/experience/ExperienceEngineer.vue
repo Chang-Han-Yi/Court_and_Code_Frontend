@@ -1,21 +1,32 @@
 <template>
-  <div class="row justify-content-center">
+  <div v-if="isLoading" class="text-center text-muted py-5">載入中...</div>
+  <div v-else-if="loadError" class="alert alert-danger">{{ loadError }}</div>
+  <div v-else class="row justify-content-center">
     <div class="col-lg-8">
-      <div class="border-start border-primary border-3 ps-3 mb-4">
-        <h5 class="fw-bold mb-1">前端工程師 / 軟體開發</h5>
-        <p class="text-muted small mb-2">YYYY.MM — 至今</p>
-        <p class="text-dark mb-0">
-          負責網站前端架構設計、系統開發與維護，專注於提供使用者清晰的操作流程與可維護的程式結構。
-        </p>
-      </div>
-      <div class="border-start border-primary border-3 ps-3">
-        <h5 class="fw-bold mb-1">Court_and_Code（本專案）</h5>
-        <p class="text-muted small mb-2">個人專案</p>
-        <p class="text-dark mb-0">
-          Vue 3 + JavaScript 前台、Express + Prisma 後台 API、Supabase PostgreSQL，實作文章 CMS
-          與雙身分內容架構。
-        </p>
-      </div>
+      <ExperienceTimeline :entries="entries" />
     </div>
   </div>
 </template>
+
+<script setup>
+import { onMounted, ref } from 'vue'
+import ExperienceTimeline from '@/components/front/inner-pages/ExperienceTimeline.vue'
+import { getExperiencePage } from '@/lib/api'
+
+const entries = ref([])
+const isLoading = ref(false)
+const loadError = ref('')
+
+onMounted(async () => {
+  isLoading.value = true
+  try {
+    const data = await getExperiencePage('engineer')
+    entries.value = data.entries ?? []
+  } catch (error) {
+    console.error(error)
+    loadError.value = '經歷內容載入失敗，請確認後端是否已啟動。'
+  } finally {
+    isLoading.value = false
+  }
+})
+</script>

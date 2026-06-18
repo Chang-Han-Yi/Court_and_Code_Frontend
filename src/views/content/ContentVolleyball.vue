@@ -13,7 +13,7 @@ async function fetchArticles() {
   isLoading.value = true
   loadError.value = ''
   try {
-    articles.value = await listArticles()
+    articles.value = await listArticles({ category: 'volleyball' })
   } catch (error) {
     console.error(error)
     loadError.value = '文章載入失敗，請稍後再試。'

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import { getArticle } from '@/lib/api'
 
@@ -7,6 +7,14 @@ const route = useRoute()
 const article = ref(null)
 const isLoading = ref(false)
 const loadError = ref('')
+
+const category = computed(() =>
+  route.meta.articleCategory === 'engineer' ? 'engineer' : 'volleyball',
+)
+const listPath = computed(() => `/content/${category.value}`)
+const backLabel = computed(() =>
+  category.value === 'engineer' ? '返回內容 · 工程' : '返回內容 · 排球',
+)
 
 async function fetchArticle() {
   const id = String(route.params.id || '').trim()
@@ -39,11 +47,8 @@ watch(() => route.params.id, fetchArticle)
     </div>
 
     <div v-else-if="article" class="mx-auto article-wrapper">
-      <RouterLink
-        to="/content/volleyball"
-        class="text-decoration-none small fw-bold text-primary"
-      >
-        <i class="bi bi-arrow-left me-1"></i>返回內容 · 排球
+      <RouterLink :to="listPath" class="text-decoration-none small fw-bold text-primary">
+        <i class="bi bi-arrow-left me-1"></i>{{ backLabel }}
       </RouterLink>
 
       <h2 class="display-6 fw-bold mt-3 mb-2">{{ article.title }}</h2>
@@ -59,8 +64,8 @@ watch(() => route.params.id, fetchArticle)
 
     <div v-else class="text-center py-5">
       <p class="text-danger mb-3">{{ loadError || '找不到文章' }}</p>
-      <RouterLink to="/content/volleyball" class="btn btn-primary rounded-pill px-4">
-        回到內容 · 排球
+      <RouterLink :to="listPath" class="btn btn-primary rounded-pill px-4">
+        {{ backLabel }}
       </RouterLink>
     </div>
   </div>

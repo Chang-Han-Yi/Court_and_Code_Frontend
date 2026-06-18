@@ -1,0 +1,116 @@
+@use '../abstracts/variables' as *;
+
+$timeline-axis-width: 2.25rem;
+$timeline-line-left: 1.125rem;
+$timeline-date-width: 7.5rem;
+
+.experience-timeline {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: $timeline-line-left;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      rgba($primary, 0.15),
+      $primary 8%,
+      $primary 92%,
+      rgba($primary, 0.15)
+    );
+    border-radius: 1px;
+  }
+}
+
+.experience-timeline-item {
+  display: grid;
+  grid-template-columns: $timeline-axis-width $timeline-date-width 1fr;
+  column-gap: 0.75rem;
+  align-items: start;
+  padding-bottom: 2rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.experience-timeline-axis {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.15rem;
+}
+
+.experience-timeline-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: $primary;
+  border: 2px solid $white;
+  box-shadow: 0 0 0 2px rgba($primary, 0.25);
+  flex-shrink: 0;
+}
+
+.experience-timeline-date {
+  padding-top: 0.1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: $primary;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.experience-timeline-content {
+  min-width: 0;
+
+  h5 {
+    color: $text-dark;
+  }
+}
+
+.experience-timeline-subtitle {
+  font-size: 0.875rem;
+  color: $text-muted;
+  margin-bottom: 0.5rem;
+}
+
+.experience-timeline-body {
+  color: $text-dark;
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+.experience-timeline--compact {
+  .experience-timeline-item {
+    padding-bottom: 1.25rem;
+  }
+
+  .experience-timeline-body {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  $timeline-axis-width-mobile: 1.75rem;
+  $timeline-line-left-mobile: 0.875rem;
+  $timeline-date-width-mobile: 6.25rem;
+
+  .experience-timeline::before {
+    left: $timeline-line-left-mobile;
+  }
+
+  .experience-timeline-item {
+    grid-template-columns: $timeline-axis-width-mobile $timeline-date-width-mobile 1fr;
+    column-gap: 0.5rem;
+  }
+
+  .experience-timeline-date {
+    font-size: 0.7rem;
+  }
+}

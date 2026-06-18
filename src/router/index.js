@@ -128,10 +128,11 @@ const router = createRouter({
             {
               path: 'volleyball/:id',
               name: 'ContentVolleyballArticle',
-              component: () => import('../views/content/ContentVolleyballArticle.vue'),
+              component: () => import('../views/content/ContentArticle.vue'),
               meta: {
                 ...sectionMeta('content', '文章', { icon: 'bi bi-file-text' }),
                 title: '內容',
+                articleCategory: 'volleyball',
               },
             },
             {
@@ -143,42 +144,28 @@ const router = createRouter({
                 icon: 'bi bi-code-slash',
               }),
             },
+            {
+              path: 'engineer/:id',
+              name: 'ContentEngineerArticle',
+              component: () => import('../views/content/ContentArticle.vue'),
+              meta: {
+                ...sectionMeta('content', '文章', { icon: 'bi bi-file-text' }),
+                title: '內容',
+                articleCategory: 'engineer',
+              },
+            },
           ],
         },
         {
           path: 'contact',
-          component: () => import('../layouts/front/InnerPage.vue'),
-          meta: { title: '聯絡', section: 'contact' },
-          redirect: '/contact',
-          children: [
-            {
-              path: '',
-              name: 'ContactOverview',
-              component: () => import('../views/contact/ContactOverview.vue'),
-              meta: sectionMeta('contact', '總覽', {
-                subtitle: '合作與交流方式',
-                icon: 'bi bi-envelope-paper',
-              }),
-            },
-            {
-              path: 'volleyball',
-              name: 'ContactVolleyball',
-              component: () => import('../views/contact/ContactVolleyball.vue'),
-              meta: sectionMeta('contact', '排球', {
-                subtitle: '賽事與排球相關邀約',
-                icon: 'bi bi-dribbble',
-              }),
-            },
-            {
-              path: 'engineer',
-              name: 'ContactEngineer',
-              component: () => import('../views/contact/ContactEngineer.vue'),
-              meta: sectionMeta('contact', '工程', {
-                subtitle: '技術與專案合作',
-                icon: 'bi bi-laptop',
-              }),
-            },
-          ],
+          name: 'Contact',
+          component: () => import('../views/contact/ContactOverview.vue'),
+          meta: {
+            title: '聯絡',
+            section: 'contact',
+            subtitle: '合作與交流方式',
+            icon: 'bi bi-envelope-paper',
+          },
         },
         // 舊路徑導向新架構
         { path: 'volleyball', redirect: '/content/volleyball' },
@@ -202,16 +189,8 @@ const router = createRouter({
           meta: { title: '文章管理' },
         },
         {
-          path: 'create-post',
-          name: 'CreatePost',
-          component: () => import('../views/CreatePost.vue'),
-          meta: { title: '新增文章' },
-        },
-        {
-          path: 'edit-post/:id',
-          name: 'EditPost',
-          component: () => import('../views/EditPost.vue'),
-          meta: { title: '編輯文章' },
+          path: 'experience',
+          redirect: { path: '/admin/dashboard', query: { section: 'experience' } },
         },
       ],
     },
